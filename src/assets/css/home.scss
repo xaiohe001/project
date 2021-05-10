@@ -1,0 +1,73 @@
+#app{
+
+}
+.home{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  overflow: hidden;
+  a{
+    color: #71777C;
+    line-height: 40px;
+  }
+  a:hover{
+    color: #007FFF;
+  }
+  :nth-child(1){
+    display: flex;
+  }
+  :nth-child(2){
+    display: flex;
+  }
+  :nth-child(2){
+    color: #007FFF;
+  }
+}
+.el-tabs__active-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0 !important;
+  background-color: #409EFF;
+  z-index: 1;
+  transition: transform .3s cubic-bezier(.645,.045,.355,1);
+  list-style: none;
+}
+.el-tabs__nav-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px !important;
+  background-color: #E4E7ED;
+  z-index: 1;
+}
+.el-input{
+  width: 166px !important;
+}
+.el-dropdown .el-button-group {
+  display: inline-flex !important;
+}
+.home__tabs{
+  width: 100%;
+  border-top: 1px solid #F1F1F1;
+}
+.el-tabs__nav-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0 !important;
+  background-color: #E4E7ED;
+  z-index: 1;
+}
+.el-tabs.el-tabs--top {
+  width: 960px;
+  margin: auto;
+}
