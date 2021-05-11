@@ -24,10 +24,7 @@
       <template>
         <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="推荐" name="first">
-          <div>
-            <h3>掘金创作者中心上线了</h3>
-            <p>半岛女按实际大客户的手机号发神经看到回复</p>
-          </div>
+          <Recommend />
         </el-tab-pane>
         <el-tab-pane label="后端" name="second">后端</el-tab-pane>
         <el-tab-pane label="前端" name="third">前端</el-tab-pane>
@@ -41,16 +38,18 @@
       </template>
     </div>
   </div>
+  
 </template>
 
 <script>
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
+import Recommend from './Recommend'
 
 export default {
   name: 'Home',
   components: {
-    
+    Recommend
   },
      data() {
       return {
@@ -67,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "../assets/css/home.scss";
+  @import "../../style/home.scss";
   .el-dropdown {
     vertical-align: top;
   }
