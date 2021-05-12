@@ -48,13 +48,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss" >
 // @import "../../assets/css/home.scss";
-.el-tabs__content{
-  width: 700px;
-}
 .home__tabs__lists{
-  padding: 15px 15px 0 15px ;
+  padding: 15px 15px 0 15px;
+  width: 700px;
   height: 185px;
   box-sizing: border-box;
   background-color: #f4f5f5;
@@ -154,5 +152,8 @@ export default {
   z-index: 999;
   background-color: #fff;
 }
-
+.el-tab-pane{
+  display: flex;
+  justify-content: space-between;
+}
 </style>

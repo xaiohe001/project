@@ -25,6 +25,7 @@
         <el-tabs v-model="activeName" @tab-click="handleClick">
         <el-tab-pane label="推荐" name="first">
           <Recommend />
+          <Side/>
         </el-tab-pane>
         <el-tab-pane label="后端" name="second">后端</el-tab-pane>
         <el-tab-pane label="前端" name="third">前端</el-tab-pane>
@@ -45,11 +46,13 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 import Recommend from './Recommend'
+import Side from '../Side'
 
 export default {
   name: 'Home',
   components: {
-    Recommend
+    Recommend,
+    Side
   },
      data() {
       return {
