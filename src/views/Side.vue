@@ -55,18 +55,6 @@
           <ul>
               <li><a href="https://blog.csdn.net/Z_qing_he">©2021 小賀</a></li>
           </ul>
-          <ul class="imgs">
-              <li>
-                <a href="https://weibo.com/login.php?sudaref=www.google.com.hk&display=0&retcode=6102"><img src="http://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/weibo.0cd39f5.png" alt=""></a> 
-              </li><span> . </span>
-              <li>
-                <a href="https://pc.weixin.qq.com/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/wechat.ce329e6.png" alt=""></a> 
-                <div class="imgs__img">
-                    <p>微信扫一扫</p>
-                    <img src="" alt="">
-                </div>
-              </li>
-          </ul>
       </div>
   </div>
 </template>
