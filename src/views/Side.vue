@@ -55,6 +55,18 @@
           <ul>
               <li><a href="https://blog.csdn.net/Z_qing_he">©2021 小賀</a></li>
           </ul>
+          <ul class="imgs">
+              <li>
+                <a href="https://weibo.com/login.php?sudaref=www.google.com.hk&display=0&retcode=6102"><img src="http://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/weibo.0cd39f5.png" alt=""></a> 
+              </li><span> . </span>
+              <li>
+                <a href="https://pc.weixin.qq.com/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/wechat.ce329e6.png" alt=""></a> 
+                <div class="imgs__img">
+                    <p>微信扫一扫</p>
+                    <img src="" alt="">
+                </div>
+              </li>
+          </ul>
       </div>
   </div>
 </template>
@@ -165,10 +177,31 @@ export default {
                     a:hover{
                         color: #007fff;
                     }
+                    img{
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
                 span{
                     color: #909090;
                     padding: 0 5px 0 0;
+                }
+            }
+            .imgs{
+                margin-top: 15px;
+                &__img{
+                    width: 120px;
+                    height: 140px;
+                    position: relative;
+                    left: -25px;
+                    p{
+                        text-align: center;
+                    }
+                    img{
+                        width: 120px;
+                        height: 120px;
+                        border: 1px solid rgb(129, 36, 148);
+                    }
                 }
             }
         }
