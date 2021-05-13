@@ -1,28 +1,30 @@
 <template>
-<div>
+  <div>
   <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>老炮儿、狗儿</p>
         <span> | </span>
-        <p class="times">5分钟</p>
+        <p class="times">5小时前</p>
       </div>
-      <div class="lists__mintitle__right">前端</div>
+      <div class="lists__mintitle__rights">Android</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>
+          【View系列】让View滑动起来的几种方式
+    </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+              前言 前几的文章一直在扒源码，讲流程，阅读难度系数略微高点。今天我们聊个稍微轻松基础的话题：让View滑动起来的几种方式。Android中又很多可滑动的View,比如ScrollView、Nested
         </p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
-            点赞
+            12
           </span>
           <span>
             <img src="../../assets/pinglun.png" alt="" />
-            评论
+            3
           </span>
           <span>
             <img src="../../assets/share.png" alt="" />
@@ -32,7 +34,7 @@
       </div>
       <div class="home__tabs__left__img">
         <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
+          src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d49fd11752df4fdb83ba324874f2656f~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
           alt=""
         />
       </div>
@@ -43,8 +45,8 @@
 
 <script>
 export default {
-    name:'Recommend'
-};
+    name:"Before"
+}
 </script>
 
 <style lang="scss" >
@@ -82,10 +84,10 @@ export default {
     padding-top: 15px;
   }
 }
-.lists__mintitle__right{
+.lists__mintitle__rights{
   font-size: 14px;
   color: #4e5969;
-  width: 40px;
+  width: 70px;
   text-align: center;
   height: 20px;
   cursor: pointer;

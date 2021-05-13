@@ -1,28 +1,30 @@
 <template>
-<div>
+  <div>
   <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>CookieBoty</p>
         <span> | </span>
-        <p class="times">5分钟</p>
+        <p class="times">2小时前</p>
       </div>
       <div class="lists__mintitle__right">前端</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>
+        这是一个关于新小册的广告贴
+    </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+              前言 今天上了一本预发的小册《基于 Node 的 DevOps 实战》。 趁着这个首发机会跟大家介绍一下整个小册规划以及适合的人群。 小册的由来 之前写过博客连载过一样的系列，但是中途有些事情耽搁后面
         </p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
-            点赞
+            13
           </span>
           <span>
             <img src="../../assets/pinglun.png" alt="" />
-            评论
+            1
           </span>
           <span>
             <img src="../../assets/share.png" alt="" />
@@ -32,7 +34,7 @@
       </div>
       <div class="home__tabs__left__img">
         <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
+          src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/016542276820400b8b838715c80d02c6~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
           alt=""
         />
       </div>
@@ -43,8 +45,8 @@
 
 <script>
 export default {
-    name:'Recommend'
-};
+    name:"Before"
+}
 </script>
 
 <style lang="scss" >

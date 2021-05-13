@@ -78,8 +78,7 @@ export default {
     data() {
     return {
       input: '',
-      seen:false,
-      current:0
+      seen:false
     }
   },
   methods:{

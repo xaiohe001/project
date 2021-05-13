@@ -1,24 +1,26 @@
 <template>
-<div>
+  <div>
   <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>洋仔</p>
         <span> | </span>
-        <p class="times">5分钟</p>
+        <p class="times">3小时前</p>
       </div>
-      <div class="lists__mintitle__right">前端</div>
+      <div class="lists__mintitle__right">iOS</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>
+          iOS系列之Autorelease
+    </h3>
     <div class="home__tabs__left">
-      <div class="home__tabs__left__txt">
+      <div class="home__tabs__left__txts">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+              Autorelease机制是iOS开发者管理对象内存的好伙伴，MRC中，调用[obj autorelease]来延迟内存的释放是一件简单自然的事；ARC下，我们甚至可以完全不知道Autorelease
         </p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
-            点赞
+            1
           </span>
           <span>
             <img src="../../assets/pinglun.png" alt="" />
@@ -30,12 +32,6 @@
           </span>
         </div>
       </div>
-      <div class="home__tabs__left__img">
-        <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
-          alt=""
-        />
-      </div>
     </div>
   </div>
 </div>
@@ -43,8 +39,8 @@
 
 <script>
 export default {
-    name:'Recommend'
-};
+    name:"Ios"
+}
 </script>
 
 <style lang="scss" >
@@ -101,16 +97,9 @@ export default {
   border-bottom: 1px solid #E5E6EB;
   display: flex;
   justify-content: space-between;
-  &__img{
-    img{
-      width: 142px;
-      height: 80px;
-      border-radius: 2px;
-    }
-  }
-  &__txt{
+  &__txts{
     p{
-      width: 500px;
+      width: 670px;
       height: 40px;
       overflow: hidden;
       text-overflow: ellipsis;

@@ -1,19 +1,21 @@
 <template>
-<div>
+  <div>
   <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>Flink_China</p>
         <span> | </span>
-        <p class="times">5分钟</p>
+        <p class="times">10小时前</p>
       </div>
-      <div class="lists__mintitle__right">前端</div>
+      <div class="lists__mintitle__right">Flink</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>
+          百信银行基于 Apache Hudi 实时数据湖演进方案
+    </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+              本文介绍了百信银行实时计算平台的建设情况，实时数据湖构建在 Hudi 上的方案和实践方法，以及实时计算平台集成 Hudi 和使用 Hudi 的方式。
         </p>
         <div class="comment">
           <span>
@@ -32,7 +34,7 @@
       </div>
       <div class="home__tabs__left__img">
         <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
+          src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/056ae1d93b664be6ba7645dba8e599ca~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
           alt=""
         />
       </div>
@@ -43,8 +45,8 @@
 
 <script>
 export default {
-    name:'Recommend'
-};
+    name:"Read"
+}
 </script>
 
 <style lang="scss" >

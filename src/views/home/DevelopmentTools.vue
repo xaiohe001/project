@@ -1,24 +1,26 @@
 <template>
-<div>
+  <div>
   <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>小蚂蚁游戏开发</p>
         <span> | </span>
-        <p class="times">5分钟</p>
+        <p class="times">11小时前</p>
       </div>
-      <div class="lists__mintitle__right">前端</div>
+      <div class="lists__mintitle__rights">游戏开发</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>
+          微信小游戏开发新手教程6-不要挡住我，我要去上面
+    </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+              这一节里，我们将学习精灵层级的管理，只需要记住一句简单的口诀，就能够驾轻就熟了。口诀：谁挡住了我，我就去谁的上面。
         </p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
-            点赞
+            2
           </span>
           <span>
             <img src="../../assets/pinglun.png" alt="" />
@@ -32,7 +34,7 @@
       </div>
       <div class="home__tabs__left__img">
         <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
+          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/557f4c23d07a4b26b9b308f0be9a0536~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
           alt=""
         />
       </div>
@@ -43,8 +45,8 @@
 
 <script>
 export default {
-    name:'Recommend'
-};
+    name:"DevelopmentTools"
+}
 </script>
 
 <style lang="scss" >
@@ -82,10 +84,10 @@ export default {
     padding-top: 15px;
   }
 }
-.lists__mintitle__right{
+.lists__mintitle__rights{
   font-size: 14px;
   color: #4e5969;
-  width: 40px;
+  width: 70px;
   text-align: center;
   height: 20px;
   cursor: pointer;

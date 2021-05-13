@@ -1,28 +1,30 @@
 <template>
-<div>
+  <div>
   <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>程序员鱼皮</p>
         <span> | </span>
-        <p class="times">5分钟</p>
+        <p class="times">1天前</p>
       </div>
-      <div class="lists__mintitle__right">前端</div>
+      <div class="lists__mintitle__right">面试</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>
+          在车上偶遇一位阿里大佬
+    </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+              大家好，我是鱼皮。 要回上海了，在汽车上本来想闭目养神一下，没想到却偶遇了一位技术 Leader 级别的阿里大佬。作为小辈，有很多问题想向大佬请教，就聊上了，相谈甚欢。 聊了很多话题，比如技术、业务、
         </p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
-            点赞
+            33
           </span>
           <span>
             <img src="../../assets/pinglun.png" alt="" />
-            评论
+            12
           </span>
           <span>
             <img src="../../assets/share.png" alt="" />
@@ -32,7 +34,7 @@
       </div>
       <div class="home__tabs__left__img">
         <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
+          src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0802aedd26124e469dccc37e5e8d986a~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
           alt=""
         />
       </div>
@@ -43,8 +45,8 @@
 
 <script>
 export default {
-    name:'Recommend'
-};
+    name:"Codes"
+}
 </script>
 
 <style lang="scss" >
