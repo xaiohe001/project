@@ -12,7 +12,7 @@
           prefix-icon="el-icon-search"
           v-model="input2" />
 
-          <el-dropdown split-button type="primary" @click="handleClick">
+          <el-dropdown split-button type="primary" >
               写文章
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>发布沸点</el-dropdown-item>
@@ -22,19 +22,51 @@
     </div>
     <div class="home__tabs">
       <template>
-        <el-tabs v-model="activeName" @tab-click="handleClick">
+        <el-tabs v-model="activeName">
         <el-tab-pane label="推荐" name="first">
           <Recommend />
           <Side/>
         </el-tab-pane>
-        <el-tab-pane label="后端" name="second">后端</el-tab-pane>
-        <el-tab-pane label="前端" name="third">前端</el-tab-pane>
-        <el-tab-pane label="Android" name="fourth">Android</el-tab-pane>
-        <el-tab-pane label="iOS" name="fifth">iOS</el-tab-pane>
-        <el-tab-pane label="人工智能" name="sixth">人工智能</el-tab-pane>
-        <el-tab-pane label="开发工具" name="seventh">开发工具</el-tab-pane>
-        <el-tab-pane label="代码人生" name="eighth">代码人生</el-tab-pane>
-        <el-tab-pane label="阅读" name="ninth">阅读</el-tab-pane>
+        <el-tab-pane label="后端" name="second">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="前端" name="third">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="Android" name="fourth">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="iOS" name="fifth">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="人工智能" name="sixth">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="开发工具" name="seventh">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="代码人生" name="eighth">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
+        <el-tab-pane label="阅读" name="ninth">
+          <Recommend />
+          <Side/>
+        
+        </el-tab-pane>
         </el-tabs>
       </template>
     </div>
@@ -61,9 +93,7 @@ export default {
       };
     },
     methods: {
-      handleClick(tab, event) {
-        console.log(tab, event);
-      }
+
     }
 }
 </script>

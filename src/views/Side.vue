@@ -21,6 +21,7 @@
       </div>
       <div class="img">
           <img src="https://i01piccdn.sogoucdn.com/e9d2fd90868d1dc0" alt="">
+          <img src="https://inews.gtimg.com/newsapp_bt/0/11382602620/1000" alt="">
       </div>
       <div class="side__about">
           <ul>
@@ -60,10 +61,10 @@
                 <a href="https://weibo.com/login.php?sudaref=www.google.com.hk&display=0&retcode=6102"><img src="http://sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/weibo.0cd39f5.png" alt=""></a> 
               </li><span> . </span>
               <li>
-                <a href="https://pc.weixin.qq.com/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/wechat.ce329e6.png" alt=""></a> 
-                <div class="imgs__img">
+                <a href="https://pc.weixin.qq.com/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/wechat.ce329e6.png" alt="" @mouseenter="enter()" @mouseleave="leave()"></a> 
+                <div v-show="seen" class="imgs__img">
                     <p>微信扫一扫</p>
-                    <img src="" alt="">
+                    <img src="../assets/WeChat.png" alt="">
                 </div>
               </li>
           </ul>
@@ -76,9 +77,19 @@ export default {
     name:"Side",
     data() {
     return {
-      input: ''
+      input: '',
+      seen:false,
+      current:0
     }
-  }
+  },
+  methods:{
+      enter(){
+        this.seen = true;
+      },
+      leave(){
+        this.seen = false;
+      }
+    }
 }
 </script>
 
@@ -156,13 +167,14 @@ export default {
             img{
                 width: 240px;
                 height: 270px;
+                padding-bottom: 18px;
             }
         }
         &__about{
-            background-color: pink;
+            // background-color: pink;
             width: 240px;
             position: relative;
-            top: 50px;
+            top: 340px;
             left: -15px;
             ul{
                 display: flex;
@@ -187,7 +199,7 @@ export default {
                     padding: 0 5px 0 0;
                 }
             }
-                                img{
+                    img{
                         width: 24px;
                         height: 24px;
                     }
@@ -204,7 +216,6 @@ export default {
                     img{
                         width: 120px;
                         height: 120px;
-                        border: 1px solid rgb(129, 36, 148);
                     }
                 }
             }
