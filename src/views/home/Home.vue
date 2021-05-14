@@ -2,10 +2,10 @@
   <div>
     <div class="home">
         <a href="javascript:;"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" /></a> 
-        <a href="javascript:;">首页</a>
-        <a href="javascript:;">沸点</a>
-        <a href="javascript:;">小册</a>
-        <a href="javascript:;">活动</a>
+        <a class="home__a" href="javascript:;">首页</a>
+        <a class="home__a" href="javascript:;">沸点</a>
+        <a class="home__a" href="javascript:;">小册</a>
+        <a class="home__a" href="javascript:;">活动</a>
         <div></div><div></div><div></div><div></div>
         <el-input
           placeholder="探索掘金"
@@ -18,7 +18,8 @@
               <el-dropdown-item>发布沸点</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <el-button>登录</el-button>
+          <el-button> <router-link to="">登录</router-link> </el-button>
+          <!-- ../../Login -->
     </div>
     <div class="home__tabs">
       <template>
@@ -70,6 +71,7 @@
         </el-tabs>
       </template>
     </div>
+      <Login></Login>
   </div>
   
 </template>
@@ -87,6 +89,7 @@ import ArtificialIntelligence from './ArtificialIntelligence'
 import DevelopmentTools from './DevelopmentTools'
 import Codes from './Codes'
 import Read from './Read'
+import Login from '../Login'
 
 export default {
   name: 'Home',
@@ -100,7 +103,8 @@ export default {
     ArtificialIntelligence,
     DevelopmentTools,
     Codes,
-    Read
+    Read,
+    Login
 
   },
      data() {
@@ -110,7 +114,7 @@ export default {
       };
     },
     methods: {
-
+     
     }
 }
 </script>
@@ -126,4 +130,7 @@ export default {
   .el-icon-arrow-down {
     font-size: 12px;
   }
+  .home__a{
+    line-height: 40px;
+  } 
 </style>
