@@ -1,5 +1,5 @@
 <template>
-    <div class="login__background" v-show="show">
+    <div class="login__background">
         <div class="login">
             <div>用户名 : <input type="text" v-model="name" /> </div> 
             <div>密  码 : <input type="text" v-model='psw' /></div>  
@@ -30,13 +30,13 @@ export default {
                 localStorage.setItem('jud',true)
                 this.$router.push({
                     name: url,
-                    
+                    path:'/'
                 })
-                this.$router.go(0)
+                // this.$router.go(0)
             }else {
                 alert('用户密码错误')
                 this.$router.push({
-                    path: '/'
+                    path: '/Login'
                 })
             }
         }
@@ -45,10 +45,6 @@ export default {
 </script>
 
 <style>
-    .login__background{
-        
-    }
-
     .login{
         position: fixed;
         top: 50%;

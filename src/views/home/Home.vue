@@ -18,7 +18,7 @@
               <el-dropdown-item>发布沸点</el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <el-button> <router-link to="">登录</router-link> </el-button>
+          <el-button> <router-link to="../../Login">登录</router-link> </el-button>
           <!-- ../../Login -->
     </div>
     <div class="home__tabs">
@@ -71,7 +71,6 @@
         </el-tabs>
       </template>
     </div>
-      <Login></Login>
   </div>
   
 </template>
