@@ -122,7 +122,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 120px;
+      width: 120px !important;
       height: 80px;
       border-radius: 2px;
     }
