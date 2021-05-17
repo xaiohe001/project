@@ -11,7 +11,7 @@ const routes = [
     component: Home
   },
   {
-    path: '/detail',
+    path: '/topic/:id',
     name: 'Detail',
 
     // route level code-splitting
@@ -60,6 +60,7 @@ const routes = [
     }
   }
   
+
 ]
 
 const router = new VueRouter({

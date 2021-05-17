@@ -122,7 +122,7 @@ export default {
                 }
                 button{
                     width: 90px;
-                    height: 29px;
+                    height: 30px;
                     color: #007FFF;
                     cursor: pointer;
                     background-color: #fff;

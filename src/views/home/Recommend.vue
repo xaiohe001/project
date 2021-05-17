@@ -1,28 +1,29 @@
 <template>
 <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/' +item.id">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>杭州程序员张张</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">5分钟</p>
       </div>
       <div class="lists__mintitle__right">前端</div>
     </div>
-    <h3>在Javascript应用程序中执行语音识别</h3>
+    <h3>{{item.title}}</h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
         <p>
-          语音识别是计算机科学和计算语言学的一个跨学科子领域。它可以识别口语并将其翻译成文本，它也被称为自动语音识别（ASR），计算机语音识别或语音转文本（STT）。 机器学习（ML）是人工智能（AI）的一种应
+          {{item.content}}
         </p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
-            点赞
+            {{item.visit_count}}
           </span>
           <span>
             <img src="../../assets/pinglun.png" alt="" />
-            评论
+            {{item.reply_count}}
           </span>
           <span>
             <img src="../../assets/share.png" alt="" />
@@ -31,19 +32,36 @@
         </div>
       </div>
       <div class="home__tabs__left__img">
-        <img
-          src="https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a905127f00ba44e5af9cecae14876542~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
-          alt=""
-        />
+        <img :src="item.author.avatar_url" alt="" />
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:'Recommend'
+    name:'Recommend',
+    data(){
+      return{
+        lists:[]
+      }
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+        params:{
+          tab:'all',
+          page:1,
+          limit:10
+        }
+      }).then(res=>{
+        // console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 };
 </script>
 
@@ -79,6 +97,7 @@ export default {
     }
   }
   h3{
+    color: #222;
     padding-top: 15px;
   }
 }
@@ -103,7 +122,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 142px;
+      width: 120px;
       height: 80px;
       border-radius: 2px;
     }
