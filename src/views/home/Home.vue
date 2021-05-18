@@ -70,6 +70,7 @@ import Codes from './Codes'
 import Read from './Read'
 import Login from '../Login'
 import Nav from './Nav'
+import Sidetil from '../Sidetil'
 
 export default {
   name: 'Home',
@@ -85,7 +86,8 @@ export default {
     Codes,
     Read,
     Login,
-    Nav
+    Nav,
+    Sidetil
 
   },
      data() {

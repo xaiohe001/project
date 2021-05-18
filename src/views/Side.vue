@@ -31,8 +31,8 @@
               <li><a href="javascript:;">更多文章</a></li>
           </ul>
           <ul>
-              <li><a href="javascript:;">用户协议</a></li><span> · </span>
-              <li><a href="javascript:;">隐私政策</a></li><span> · </span>
+              <li><a href="./Useragreement">用户协议</a></li><span> · </span>
+              <li><a href="./Privacypolicy">隐私政策</a></li><span> · </span>
               <li><a href="javascript:;">使用指南</a></li>
           </ul>
           <ul>
