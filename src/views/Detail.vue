@@ -3,6 +3,7 @@
         <Nav></Nav>
         <div class="backgrounds">
             <div class="bakgd">
+                <Sidetail></Sidetail>
                 <div class="detail">
                     <div class="details">
                         <div>
@@ -11,7 +12,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="aboutauthor">
                     <div class="aboutauthor__about">关于作者</div>
                     <div class="aboutauthor__img">
@@ -43,12 +43,14 @@
 <script>
 import Nav from './home/Nav'
 import Sidetil from './Sidetil'
+import Sidetail from './Sidetail'
 
 export default {
     name:'Detail',
     components:{
         Nav,
-        Sidetil
+        Sidetil,
+        Sidetail
     },
      data() {
         return {
@@ -84,12 +86,12 @@ export default {
 .backgrounds{
         background-color: #E1E1E1;
         .bakgd{
-        display: flex;
-        justify-content: space-between;
-        width: 960px;
-        margin: auto;
-        padding-top: 20px;
-        padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            width: 1000px;
+            margin: auto;
+            padding-top: 20px;
+            padding-bottom: 20px;
         .detail{
             width: 700px;
             padding: 10px;

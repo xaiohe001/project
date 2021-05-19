@@ -56,6 +56,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "Sidetil" */ '../views/Sidetil.vue')
   },
   {
+    path: '/Sidetail',
+    name: 'Sidetail',
+
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "Sidetail" */ '../views/Sidetail.vue')
+  },
+  {
     path: '/Login',
     name: 'Login',
 
