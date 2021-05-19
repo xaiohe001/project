@@ -8,7 +8,7 @@
               <input type="text" placeholder="验证码">
               <button>获取验证码</button>
           </div>
-          <button class="btn">立即登录</button>
+          <button class="btn"> <router-link to="./Login">立即登录</router-link></button>
           <div class="side__text__agree">
               <p>注册登录即表示</p>
               <div>
@@ -145,6 +145,9 @@ export default {
                 border: none;
                 border-radius: 3px;
                 cursor: pointer;
+                a{
+                    color: #fff;
+                }
             }
             .btn:hover{
                     background-color: #0371df;

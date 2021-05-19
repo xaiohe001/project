@@ -1,9 +1,11 @@
 <template>
     <div class="login__background">
         <div class="login">
-            <div>用户名 : <input type="text" v-model="name" /> </div> 
-            <div>密  码 : <input type="text" v-model='psw' /></div>  
+            <p class="login__p">账号登录</p>
+            <div><input type="text" placeholder="请输入用户名" v-model="name" /> </div> 
+            <div><input type="text" placeholder="请输入密码" v-model='psw' /></div>  
             <button @click="login">登录</button>
+            <p class="login__user">注册登录即表示同意 <router-link to="./Useragreement"> <span>用户协议</span> </router-link> 、<router-link to="./Privacypolicy"> <span>隐私政策</span> </router-link></p>
         </div>
     </div>
 </template>
@@ -35,50 +37,70 @@ export default {
                 // this.$router.go(0)
             }else {
                 alert('用户密码错误')
-                this.$router.push({
-                    path: '/Login'
-                })
+                // this.$router.push({
+                //     // path: '/Login'
+                // })
             }
         }
     }
 }
 </script>
 
-<style>
-    .login{
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 999;
-        width: 300px;
-        height: 300px;
-        font-size: 20px;
-        margin: 0 auto;
-        background-color: bisque;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+<style lang="scss" scoped>
+    .login__background{
+        width: 100%;
+        height: 100vh;
+        background: url('https://w.wallhaven.cc/full/01/wallhaven-011k19.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+       .login{
+           width: 318px;
+           height: 312px;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
+           background-color: #A45101;
+           border-radius: 10px;
+           opacity: .6;
+           position: absolute;
+           margin: auto;
+           padding: 20px;
+           box-sizing: border-box;
+           top: 0;
+           right: 0;
+           bottom: 0;
+           left: 0;
+            &__p{
+                font-weight: 600;
+            }
+            input{
+                width: 260px;
+                height: 40px;
+                padding-left: 14px;
+                outline: none;
+                border-radius: 5px;
+                border: none;
+            }
+            button{
+                width: 278px;
+                height: 40px;
+                outline: none;
+                border-radius: 5px;
+                border: none;
+                background-color: #007FFF;
+                color: #fff;
+                cursor: pointer;
+            }
+            &__user{
+                font-size: 14px;
+                color: #222;
+                span{
+                    color: #007FFF;
+                }
+            }
+
+       }
     }
-    .login input{
-        height: 30px;
-        outline: none;
-    }
-    .login>div:nth-child(2) {
-        margin-left: 15px;
-    }
-    .login button{
-        width: 100px;
-        height: 35px;
-        margin: 0 auto;
-        color: #fff;
-        background-color: green;
-        border-radius: 20px;
-        outline: none;
-        border: none;
-        cursor: pointer;
-    }
-    .login button:hover{
-        color: orange;
-    }
+ 
 </style>

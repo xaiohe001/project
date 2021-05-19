@@ -30,7 +30,7 @@ export default {
     }
     p{
       font-size: 12px;
-      color: #c6c6c6;
+      color: #666;
       text-align: center;
     }
   }
