@@ -82,7 +82,7 @@ export default {
 
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 .backgrounds{
         background-color: #E1E1E1;
         .bakgd{

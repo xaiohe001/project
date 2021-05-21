@@ -1,17 +1,11 @@
 <template>
       <div class="home">
-        <a href="javascript:;"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" /></a> 
-        <!-- <a class="home__a" href="javascript:;">首页</a>
+        <a href="/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" /></a> 
+        <a class="home__a" href="/">首页</a>
         <a class="home__a" href="javascript:;">沸点</a>
         <a class="home__a" href="javascript:;">小册</a>
-        <a class="home__a" href="javascript:;">活动</a> -->
-        <el-tabs v-model="activeName" @tab-click="handleClick">
-          <el-tab-pane label="首页" name="first">用户管理</el-tab-pane>
-          <el-tab-pane label="沸点" name="second">配置管理</el-tab-pane>
-          <el-tab-pane label="小册" name="third">角色管理</el-tab-pane>
-          <el-tab-pane label="活动" name="fourth">定时任务补偿</el-tab-pane>
-        </el-tabs>
-        <!-- <div></div><div></div><div></div><div></div> -->
+        <a class="home__a" href="javascript:;">活动</a>
+        <div></div><div></div><div></div><div></div>
         <el-input
           placeholder="探索掘金"
           prefix-icon="el-icon-search"
@@ -20,7 +14,7 @@
           <el-dropdown split-button type="primary" >
               写文章
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>发布沸点</el-dropdown-item>
+              <router-link to="../../Login"><el-dropdown-item> 发布沸点 </el-dropdown-item></router-link>
             </el-dropdown-menu>
           </el-dropdown>
           <el-button> <router-link to="../../Login">登录</router-link> </el-button>

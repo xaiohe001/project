@@ -4,10 +4,10 @@
     <div class="home__tabs">
       <template>
         <el-tabs v-model="activeName">
-        <el-tab-pane label="推荐" name="first">
-          <Recommend />
-          <Side/>
-        </el-tab-pane>
+          <el-tab-pane label="推荐" name="first">
+            <Recommend />
+            <Side/>
+          </el-tab-pane>
         <el-tab-pane label="后端" name="second">
           <After />
           <Side/>

@@ -13,9 +13,7 @@
     <h3>{{item.title}}</h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
-        <p>
-          {{item.content}}
-        </p>
+        <p class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -65,7 +63,7 @@ export default {
 };
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // @import "../../assets/css/home.scss";
 .home__tabs__lists{
   padding: 15px 15px 0 15px;
@@ -99,6 +97,9 @@ export default {
   h3{
     color: #222;
     padding-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 .lists__mintitle__right{
@@ -122,7 +123,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 120px !important;
+      width: 120px;
       height: 80px;
       border-radius: 2px;
     }
@@ -173,5 +174,29 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+}
+ ::v-deep .markdown-text{
+  width: 500px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969; 
+  }
+  a{
+      color: #4e5969;
+    }
 }
 </style>

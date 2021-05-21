@@ -1,22 +1,21 @@
 <template>
   <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/'+item.id ">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>最新鲜的大厂新闻</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">9小时前</p>
       </div>
       <div class="lists__mintitle__right">后端</div>
     </div>
     <h3>
-        AWS 宣布边缘计算 Cloudfront 功能全面上市，支持运行 JavaScript 
+        {{item.title}}
     </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
-        <p>
-            AWS宣布全面提供 CloudFront功能，这是一种新的边缘计算能力。通过这项新的CloudFront功能，客户可以在全球范围内的 CloudFront 边缘位置运行 JavaScript功能。
-        </p>
+        <p class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -33,23 +32,43 @@
         </div>
       </div>
       <div class="home__tabs__left__img">
-        <img
-          src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/323d799abf444b9f8c2e48c112871d4b~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
-          alt=""
-        />
+        <img :src="item.author.avatar_url" alt="" />
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:"After"
+    name:"After",
+    data(){
+      return{
+        lists:[]
+      }
+      
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+         params:{
+          tab:'all',
+          page:2,
+          limit:10
+        }
+      }).then(res=>{
+        console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
+
+
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // @import "../../assets/css/home.scss";
 .home__tabs__lists{
   padding: 15px 15px 0 15px;
@@ -82,6 +101,10 @@ export default {
   }
   h3{
     padding-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #1d2129;
   }
 }
 .lists__mintitle__right{
@@ -105,7 +128,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 142px;
+      width: 120px;
       height: 80px;
       border-radius: 2px;
     }
@@ -156,5 +179,29 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+}
+ ::v-deep .markdown-text{
+  width: 500px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969;
+    a{
+      color: #4e5969;
+    }
+  }
 }
 </style>

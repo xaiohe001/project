@@ -1,22 +1,21 @@
 <template>
   <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/'+item.id ">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>CookieBoty</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">2小时前</p>
       </div>
       <div class="lists__mintitle__right">前端</div>
     </div>
     <h3>
-        这是一个关于新小册的广告贴
+        {{item.title}}
     </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
-        <p>
-              前言 今天上了一本预发的小册《基于 Node 的 DevOps 实战》。 趁着这个首发机会跟大家介绍一下整个小册规划以及适合的人群。 小册的由来 之前写过博客连载过一样的系列，但是中途有些事情耽搁后面
-        </p>
+      <p class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -33,23 +32,41 @@
         </div>
       </div>
       <div class="home__tabs__left__img">
-        <img
-          src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/016542276820400b8b838715c80d02c6~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
-          alt=""
-        />
+        <img :src="item.author.avatar_url" alt="" />
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:"Before"
+    name:"Before",
+     data(){
+      return{
+        lists:[]
+      }
+      
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+         params:{
+          tab:'all',
+          page:3,
+          limit:10
+        }
+      }).then(res=>{
+        console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // @import "../../assets/css/home.scss";
 .home__tabs__lists{
   padding: 15px 15px 0 15px;
@@ -82,6 +99,10 @@ export default {
   }
   h3{
     padding-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #1d2129;
   }
 }
 .lists__mintitle__right{
@@ -105,7 +126,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 142px;
+      width: 120px;
       height: 80px;
       border-radius: 2px;
     }
@@ -156,5 +177,29 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+}
+ ::v-deep .markdown-text{
+  width: 500px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969;
+  }
+  a{
+      color: #4e5969;
+    }
 }
 </style>
