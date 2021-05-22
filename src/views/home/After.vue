@@ -199,9 +199,10 @@ export default {
     padding-top: 0px;
     font-size: 14px;
     color: #4e5969;
-    a{
+    
+  }
+  a{
       color: #4e5969;
     }
-  }
 }
 </style>

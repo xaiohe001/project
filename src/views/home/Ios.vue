@@ -50,7 +50,7 @@ export default {
       this.axios.get('https://cnodejs.org/api/v1/topics',{
          params:{
           tab:'all',
-          page:4,
+          page:8,
           limit:10
         }
       }).then(res=>{

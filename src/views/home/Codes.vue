@@ -1,22 +1,21 @@
 <template>
   <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/'+item.id ">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>程序员鱼皮</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">1天前</p>
       </div>
       <div class="lists__mintitle__right">面试</div>
     </div>
     <h3>
-          在车上偶遇一位阿里大佬
+       {{item.title}}
     </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
-        <p>
-              大家好，我是鱼皮。 要回上海了，在汽车上本来想闭目养神一下，没想到却偶遇了一位技术 Leader 级别的阿里大佬。作为小辈，有很多问题想向大佬请教，就聊上了，相谈甚欢。 聊了很多话题，比如技术、业务、
-        </p>
+        <p class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -33,23 +32,41 @@
         </div>
       </div>
       <div class="home__tabs__left__img">
-        <img
-          src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0802aedd26124e469dccc37e5e8d986a~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
-          alt=""
-        />
+        <img :src="item.author.avatar_url" alt="" />
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:"Codes"
+    name:"Codes",
+     data(){
+      return{
+        lists:[]
+      }
+      
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+         params:{
+          tab:'ask',
+          page:1,
+          limit:10
+        }
+      }).then(res=>{
+        console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // @import "../../assets/css/home.scss";
 .home__tabs__lists{
   padding: 15px 15px 0 15px;
@@ -82,6 +99,10 @@ export default {
   }
   h3{
     padding-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #1d2129;
   }
 }
 .lists__mintitle__right{
@@ -105,7 +126,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 142px;
+      width: 120px;
       height: 80px;
       border-radius: 2px;
     }
@@ -156,5 +177,29 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+}
+::v-deep .markdown-text{
+  width: 500px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969;
+  }
+  a{
+      color: #4e5969;
+    }
 }
 </style>

@@ -1,22 +1,21 @@
 <template>
   <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/'+item.id ">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>Flink_China</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">10小时前</p>
       </div>
       <div class="lists__mintitle__right">Flink</div>
     </div>
     <h3>
-          百信银行基于 Apache Hudi 实时数据湖演进方案
+        {{item.title}}
     </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txt">
-        <p>
-              本文介绍了百信银行实时计算平台的建设情况，实时数据湖构建在 Hudi 上的方案和实践方法，以及实时计算平台集成 Hudi 和使用 Hudi 的方式。
-        </p>
+        <p class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -33,19 +32,37 @@
         </div>
       </div>
       <div class="home__tabs__left__img">
-        <img
-          src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/056ae1d93b664be6ba7645dba8e599ca~tplv-k3u1fbpfcp-zoom-mark-crop-v2:0:0:426:240.awebp"
-          alt=""
-        />
+        <img :src="item.author.avatar_url" alt="" />
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:"Read"
+    name:"Read",
+     data(){
+      return{
+        lists:[]
+      }
+      
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+         params:{
+          tab:'ask',
+          page:2,
+          limit:10
+        }
+      }).then(res=>{
+        console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
 </script>
 
@@ -82,6 +99,10 @@ export default {
   }
   h3{
     padding-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #1d2129;
   }
 }
 .lists__mintitle__right{
@@ -105,7 +126,7 @@ export default {
   justify-content: space-between;
   &__img{
     img{
-      width: 142px;
+      width: 120px;
       height: 80px;
       border-radius: 2px;
     }
@@ -156,5 +177,29 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+}
+::v-deep .markdown-text{
+  width: 500px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969;
+  }
+  a{
+      color: #4e5969;
+    }
 }
 </style>

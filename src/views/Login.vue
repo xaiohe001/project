@@ -50,7 +50,7 @@ export default {
     .login__background{
         width: 100%;
         height: 100vh;
-        background: url('https://w.wallhaven.cc/full/01/wallhaven-011k19.jpg');
+        background: url('../assets/wallhaven-011k19.jpg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: relative;
