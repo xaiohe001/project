@@ -1,22 +1,21 @@
 <template>
   <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/'+item.id ">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>洋仔</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">3小时前</p>
       </div>
       <div class="lists__mintitle__right">iOS</div>
     </div>
     <h3>
-          iOS系列之Autorelease
+       {{item.title}}
     </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txts">
-        <p>
-              Autorelease机制是iOS开发者管理对象内存的好伙伴，MRC中，调用[obj autorelease]来延迟内存的释放是一件简单自然的事；ARC下，我们甚至可以完全不知道Autorelease
-        </p>
+        <p  class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -33,17 +32,38 @@
         </div>
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:"Ios"
+    name:"Ios",
+    data(){
+      return{
+        lists:[]
+      }
+      
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+         params:{
+          tab:'all',
+          page:4,
+          limit:10
+        }
+      }).then(res=>{
+        console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // @import "../../assets/css/home.scss";
 .home__tabs__lists{
   padding: 15px 15px 0 15px;
@@ -76,6 +96,10 @@ export default {
   }
   h3{
     padding-top: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #1d2129;
   }
 }
 .lists__mintitle__right{
@@ -143,5 +167,29 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+}
+ ::v-deep .markdown-text{
+  width: 670px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969;
+  }
+  a{
+      color: #4e5969;
+    }
 }
 </style>

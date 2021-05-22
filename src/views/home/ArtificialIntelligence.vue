@@ -1,22 +1,21 @@
 <template>
   <div>
-  <div class="home__tabs__lists" v-for="(item, index) in 10" :key="index">
+  <div class="home__tabs__lists" v-for="(item, index) in lists" :key="index">
+    <router-link :to=" '/topic/'+item.id ">
     <div class="lists__mintitle">
       <div class="lists__mintitle__left">
-        <p>华为云开发者社区</p>
+        <p>{{item.author.loginname}}</p>
         <span> | </span>
         <p class="times">6小时前</p>
       </div>
       <div class="lists__mintitle__rights">人工智能</div>
     </div>
     <h3>
-          聊聊人像抠图背后的算法技术
+       {{item.title}}
     </h3>
     <div class="home__tabs__left">
       <div class="home__tabs__left__txts">
-        <p>
-              摘要：本文将从算法概述、工程实现、优化改进三个方面阐述如何实现一个实时、优雅、精确的视频人像抠图项目。
-        </p>
+        <p class="markdown-text" v-html="item.content"></p>
         <div class="comment">
           <span>
             <img src="../../assets/zan.png" alt="" />
@@ -33,17 +32,37 @@
         </div>
       </div>
     </div>
+    </router-link>
   </div>
 </div>
 </template>
 
 <script>
 export default {
-    name:"ArtificialIntelligence"
+    name:"ArtificialIntelligence",
+    data(){
+      return{
+        lists:[]
+      }
+    },
+    mounted(){
+      this.axios.get('https://cnodejs.org/api/v1/topics',{
+         params:{
+          tab:'all',
+          page:5,
+          limit:10
+        }
+      }).then(res=>{
+        console.log(res.data.data);
+        this.lists=[...res.data.data]
+      }).catch(err=>{
+        console.log(err);
+      })
+    }
 }
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 // @import "../../assets/css/home.scss";
 .home__tabs__lists{
   padding: 15px 15px 0 15px;
@@ -76,6 +95,10 @@ export default {
   }
   h3{
     padding-top: 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #1d2129;
   }
 }
 .lists__mintitle__rights{
@@ -143,5 +166,30 @@ export default {
 .el-tab-pane{
   display: flex;
   justify-content: space-between;
+} 
+
+::v-deep .markdown-text{
+  width: 670px;
+  height: 40px;
+  overflow: hidden;
+ img{
+    display: none;
+  }
+  h1{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h2{
+    font-size: 14px;
+    color: #4e5969;
+  }
+  h3{
+    padding-top: 0px;
+    font-size: 14px;
+    color: #4e5969;
+  }
+  a{
+      color: #4e5969;
+  }
 }
 </style>
