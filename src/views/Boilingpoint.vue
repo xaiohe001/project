@@ -51,10 +51,44 @@
         </div>
         <div class="sides">
           <div class="sides__top">
-            456
+            <h3>精选沸点</h3>
+            <div class="sides__all" v-for="(item,index) in 3" :key="index">
+            <div class="sides__top__left">
+              <p>
+      👏奔走相告！！掘金创作者中心上线了！！
+😚现在发沸点还能得丰厚的周边奖励！
+
+活动时间：5月10日-5月23日
+开奖时间：在活动结束后的7个工作日内公布中奖名单，请关注「稀土君」主页。
+活动规则：选择下面两个玩法中的一个参与并达到活动要求，即可获得 掘金搪瓷杯1个 和随机发放的掘金徽章1个，每人至多获得一组奖品。
+
+
+【玩法一】
+
+
+在活动期间发布创作相关内容的沸点并带上创作者中心链接和话题 #创作者中心上线啦# ，沸点点赞数前10名的可以获得奖励。
+
+
+【玩法二】
+
+
+在活动期间坚持发布创作相关内容的沸点并带上创作者中心链接和话题 #创作者中心上线啦#，发布活动沸点天数达到10天可以获得奖励。
+
+
+内容要求：要求与创作相关，例：写作技巧、写作感悟、阅读感悟等，也可以晒出自己的创作中心数据；非创作相关的内容不能参与此活动评选。
+
+示例如图，兄弟姐妹们赶紧来参与吧！
+    </p>
+              <p class="discuss"><span>12</span>赞 · <span>6</span>评论</p>
+            </div>
+            <div class="sides__top__right">
+              <img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0e3a202cca6490b80218ced8b0649da~tplv-k3u1fbpfcp-watermark.image" alt="">
+            </div>
+          </div>
           </div>
           <div class="sides__bottom">
-            789
+            <img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/6c1b9a023d0084efca85cc217a4ee962.svg" alt="">
+           <span>如何玩转沸点</span> 
           </div>
         </div>
         
@@ -205,11 +239,12 @@ export default {
     }
   }
   .side{
-    width: 120px;
-    height: 472px;
-    background-color: #6CBD45;
+    width: 110px;
+    height: 440px;
+    background-color: #fff;
     margin-top: 15px;
     position: sticky;
+    padding: 0;
     top: 50px;
    .el-tabs__item{
       padding: 0;
@@ -223,15 +258,64 @@ export default {
     top: 50px;
     &__top{
       width: 248px;
-      background-color: #1d7dfa;
+      background-color: #fff;
       height: 320px;
+      box-sizing: border-box;
+      h3{
+        font-size: 15px;
+        padding: 13px 16px;
+        border-bottom: 1px solid #F4F4F4;
+
+      }
+      &__left{
+        height: 68px;
+        box-sizing: border-box;
+        p{
+          font-size: 14px;
+          width: 132px;
+          height: 36px;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          margin-top: 8px;
+        }
+        .discuss{
+          font-size: 12px;
+          color: #76797e;
+        }
+      }
+      &__right{
+        img{
+          width: 68px;
+          height: 68px;
+        }
+      }
     }
     &__bottom{
       width: 248px;
       height: 70px;
       margin-top: 15px;
-      background-color: violet;
+      background-color: #fff;
+      font-size: 14px;
+      padding: 16px;
+      box-sizing: border-box;
+      span{    
+        position: relative;
+        top: -12px;
+        left: 12px;
+      }
     }
 
+  }
+  ::v-deep.el-tabs--left .el-tabs__item.is-left {
+    text-align: center;
+  }
+  .sides__all{
+    margin-top: 13px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
   }
 </style>
