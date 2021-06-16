@@ -57,7 +57,7 @@ export default {
           limit:10
         }
       }).then(res=>{
-        console.log(res.data.data);
+        // console.log(res.data.data);
         this.lists=[...res.data.data]
       }).catch(err=>{
         console.log(err);

@@ -1,7 +1,7 @@
 <template>
   <div class="side">
       <div class="side__text">
-          <b>掘金 - juejin.cn</b>
+          <b>前程 - sijin.cn</b>
           <p>一个帮助开发者成长的社区</p>
           <el-input v-model="input" placeholder="请输入手机号"></el-input>
           <div class="side__text__verification">
@@ -13,9 +13,9 @@
               <p>注册登录即表示</p>
               <div>
                   同意 
-                  <router-link target="_blank" :to="{path:'./Useragreement'}"> <span>用户协议</span> </router-link>
+                  <router-link to="./Useragreement"> <span>用户协议</span> </router-link>
                       <!-- <router-link to="./Detail"> <span>用户协议</span> </router-link>  -->
-                      、<router-link target="_blank" :to="{path:'./Privacypolicy'}"> <span>隐私政策</span> </router-link>
+                      、<router-link to="./Privacypolicy_blank"> <span>隐私政策</span> </router-link>
                 </div>
           </div>
       </div>
@@ -122,7 +122,7 @@ export default {
                 }
                 button{
                     width: 90px;
-                    height: 29px;
+                    height: 30px;
                     color: #007FFF;
                     cursor: pointer;
                     background-color: #fff;

@@ -55,7 +55,7 @@
             <div class="sides__all" v-for="(item,index) in 3" :key="index">
             <div class="sides__top__left">
               <p>
-      👏奔走相告！！掘金创作者中心上线了！！
+      👏奔走相告！！沸点创作者中心上线了！！
 😚现在发沸点还能得丰厚的周边奖励！
 
 活动时间：5月10日-5月23日

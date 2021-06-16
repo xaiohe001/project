@@ -1,13 +1,13 @@
 <template>
       <div class="home">
-        <router-link to="/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" /></router-link> 
+        <router-link to="/" class="imagess"><img src="/beforeone.png" /></router-link> 
         <router-link class="home__a" to="/">首页</router-link>
         <router-link class="home__a" to="../Boilingpoint">沸点</router-link>
         <a class="home__a" href="javascript:;">小册</a>
         <a class="home__a" href="javascript:;">活动</a>
         <div></div><div></div><div></div><div></div>
         <el-input
-          placeholder="探索掘金"
+          placeholder="探索人生"
           prefix-icon="el-icon-search"
           v-model="input2" />
 
