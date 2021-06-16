@@ -1,8 +1,8 @@
 <template>
       <div class="home">
-        <a href="/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" /></a> 
-        <a class="home__a" href="/">首页</a>
-        <a class="home__a" href="../Boilingpoint">沸点</a>
+        <router-link to="/"><img src="//sf3-scmcdn2-tos.pstatp.com/xitu_juejin_web/img/logo.a7995ad.svg" /></router-link> 
+        <router-link class="home__a" to="/">首页</router-link>
+        <router-link class="home__a" to="../Boilingpoint">沸点</router-link>
         <a class="home__a" href="javascript:;">小册</a>
         <a class="home__a" href="javascript:;">活动</a>
         <div></div><div></div><div></div><div></div>
