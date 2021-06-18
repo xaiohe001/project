@@ -15,7 +15,7 @@
                   同意 
                   <router-link to="./Useragreement"> <span>用户协议</span> </router-link>
                       <!-- <router-link to="./Detail"> <span>用户协议</span> </router-link>  -->
-                      、<router-link to="./Privacypolicy_blank"> <span>隐私政策</span> </router-link>
+                      、<router-link to="./Privacypolicy"> <span>隐私政策</span> </router-link>
                 </div>
           </div>
       </div>
